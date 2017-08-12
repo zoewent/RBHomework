@@ -16,7 +16,9 @@ enum LoadImageResult {
 
 class ImageCache {
     static let shared = ImageCache()
-    private let cache = NSCache<NSString, AnyObject>()
+    let cache = NSCache<NSString, AnyObject>()
+    
+    fileprivate init() {}
     
     func loadImage(withUrl url: String, complete: @escaping (LoadImageResult) -> Void)  {
         // check cached image

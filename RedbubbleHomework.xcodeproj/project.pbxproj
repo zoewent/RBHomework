@@ -23,6 +23,8 @@
 		5D75E4551F3EF2B300843CB7 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4541F3EF2B300843CB7 /* ImageCache.swift */; };
 		5D75E4571F3EF87700843CB7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4561F3EF87700843CB7 /* ImageDownloader.swift */; };
 		5D75E4591F3EFF4E00843CB7 /* UIImageStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4581F3EFF4E00843CB7 /* UIImageStatic.swift */; };
+		5D75E45D1F3F032F00843CB7 /* ImageDownloaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E45C1F3F032F00843CB7 /* ImageDownloaderTests.swift */; };
+		5D75E45F1F3F2FBF00843CB7 /* ImageCacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E45E1F3F2FBF00843CB7 /* ImageCacheTests.swift */; };
 		A56F48A171A79B667DB1C4A6 /* Pods_RedbubbleHomeworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */; };
 		B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */; };
 		B0E6F9021F29648500B68A69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9001F29648500B68A69 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 		5D75E4541F3EF2B300843CB7 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		5D75E4561F3EF87700843CB7 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		5D75E4581F3EFF4E00843CB7 /* UIImageStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageStatic.swift; sourceTree = "<group>"; };
+		5D75E45C1F3F032F00843CB7 /* ImageDownloaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloaderTests.swift; sourceTree = "<group>"; };
+		5D75E45E1F3F2FBF00843CB7 /* ImageCacheTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCacheTests.swift; sourceTree = "<group>"; };
 		6640C8F077AACFA00C5836F2 /* Pods-RedbubbleHomework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomework/Pods-RedbubbleHomework.debug.xcconfig"; sourceTree = "<group>"; };
 		6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedbubbleHomeworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8F91F29648500B68A69 /* RedbubbleHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedbubbleHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -201,6 +205,8 @@
 			isa = PBXGroup;
 			children = (
 				5D75E43D1F3EA2F900843CB7 /* RealmTests.swift */,
+				5D75E45C1F3F032F00843CB7 /* ImageDownloaderTests.swift */,
+				5D75E45E1F3F2FBF00843CB7 /* ImageCacheTests.swift */,
 				B0E6F9131F29648500B68A69 /* Info.plist */,
 			);
 			path = RedbubbleHomeworkTests;
@@ -453,6 +459,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D75E45D1F3F032F00843CB7 /* ImageDownloaderTests.swift in Sources */,
+				5D75E45F1F3F2FBF00843CB7 /* ImageCacheTests.swift in Sources */,
 				5D75E43E1F3EA2F900843CB7 /* RealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

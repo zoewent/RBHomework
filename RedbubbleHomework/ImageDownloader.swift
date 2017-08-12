@@ -10,11 +10,9 @@ import Foundation
 
 class ImageDownloader {
     static let shared = ImageDownloader()
-    private let session: URLSession
+    private let session = URLSession(configuration: .default)
     
-    init() {
-        session = URLSession(configuration: .default)
-    }
+    fileprivate init() {}
     
     typealias ImageDownloaderCompletionHandler = (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> ()
     
@@ -22,8 +20,10 @@ class ImageDownloader {
         
         guard let imageUrl = URL(string: url) else { return }
         
-        session.dataTask(with: imageUrl) { (data, response, error) in
-            completion(data, response, error)
+        URLSession.shared.dataTask(with: imageUrl) { (data, response, error) in
+            DispatchQueue.main.async {
+                completion(data, response, error)
+            }
         }.resume()
     }
 }
