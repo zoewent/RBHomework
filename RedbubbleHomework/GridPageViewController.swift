@@ -74,28 +74,29 @@ class GridPageViewController: UIPageViewController {
 
 extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-//        if let index = menuViewControllers.index(of: viewController as! MenuViewController) {
-//            if index == 0 {
-//                return nil
-//            }
-//            return menuViewControllers[index - 1]
-//        }
+        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
+            if index == 0 {
+                return nil
+            }
+            return gridViewControllers[index - 1]
+        }
         
         return nil
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-//        if let index = menuViewControllers.index(of: viewController as! MenuViewController) {
-//            if index == menuViewControllers.count - 1 {
-//                return nil
-//            }
-//            return menuViewControllers[index + 1]
-//        }
+        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
+            if index == gridViewControllers.count - 1 {
+                return nil
+            }
+            return gridViewControllers[index + 1]
+        }
         
         return nil
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//        if let index = menuViewControllers.index(of: pageViewController.viewControllers![0] as! MenuViewController) {
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
+                            previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+//        if let index = gridViewControllers.index(of: pageViewController.viewControllers![0] as! GridCollectionViewController) {
 //            currentPage = Page(rawValue: index) ?? Page.initialPage
 //        }
 //        menuPageDelegate?.menuPageView(self, didScrollToPage: currentPage)
