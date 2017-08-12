@@ -10,15 +10,24 @@ import Foundation
 import RealmSwift
 
 extension RSWork {
-    class func items(with filter: String? = nil,
+    class func items(with keyword: String? = nil,
                      artist: String? = nil,
                      withUpdateNotificationBlock block: ((RealmCollectionChange<Results<RSWork>>) -> Void)?)
         -> (Results<RSWork>, NotificationToken?) {
-        let realm = RealmManager.shared.realm ?? RealmManager.shared.newRealm()
-        var results = realm.objects(RSWork.self)
+            let realm = RealmManager.shared.realm ?? RealmManager.shared.newRealm()
+            var results = realm.objects(RSWork.self)
+            
+            if let keyword = keyword {
+                let predicate = NSPredicate(format: "title CONTAINS %@", keyword)
+                results = results.filter(predicate)
+            }
+            
+            if let artist = artist {
+                let predicate = NSPredicate(format: "artistName = %@", artist)
+                results = results.filter(predicate)
+            }
 
-        results = results.sorted(byKeyPath: "_order")
-        let notificationToken = block != nil ? results.addNotificationBlock(block!) : nil
-        return (results, notificationToken)
+            let notificationToken = block != nil ? results.addNotificationBlock(block!) : nil
+            return (results, notificationToken)
     }
 }

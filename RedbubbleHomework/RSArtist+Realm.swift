@@ -14,17 +14,14 @@ extension RSArtist {
                      withUpdateNotificationBlock block: ((RealmCollectionChange<Results<RSArtist>>) -> Void)?)
         -> (Results<RSArtist>, NotificationToken?) {
             
+            
             let realm = RealmManager.shared.realm ?? RealmManager.shared.newRealm()
             var results = realm.objects(RSArtist.self)
             
-//            if let keyword = keyword {
-//                var filtered = results.filter { artist in
-//                    artist.name.contains(keyword)
-//                }
-//                
-//                return (filtered, notificationToken)
-//            }
-
+            if let keyword = keyword {
+                let predicate = NSPredicate(format: "name CONTAINS %@", keyword)
+                results = results.filter(predicate)
+            }
             
             let notificationToken = block != nil ? results.addNotificationBlock(block!) : nil
             return (results, notificationToken)

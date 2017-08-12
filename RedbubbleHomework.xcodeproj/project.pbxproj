@@ -12,13 +12,18 @@
 		5D75E4381F3DEEB000843CB7 /* RSWork+Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4341F3DEEB000843CB7 /* RSWork+Realm.swift */; };
 		5D75E4391F3DEEB000843CB7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4351F3DEEB000843CB7 /* User.swift */; };
 		5D75E43C1F3E9E9200843CB7 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E43B1F3E9E9200843CB7 /* RealmManager.swift */; };
+		5D75E43E1F3EA2F900843CB7 /* RealmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E43D1F3EA2F900843CB7 /* RealmTests.swift */; };
+		5D75E4411F3EBFD800843CB7 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4401F3EBFD800843CB7 /* HomeViewController.swift */; };
+		5D75E4431F3EC42900843CB7 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4421F3EC42900843CB7 /* SearchViewController.swift */; };
+		5D75E4461F3EC63C00843CB7 /* UIColorPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4451F3EC63C00843CB7 /* UIColorPalette.swift */; };
+		5D75E44A1F3ECAAC00843CB7 /* GridPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */; };
+		5D75E44E1F3ECF9C00843CB7 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */; };
+		5D75E4511F3ED08400843CB7 /* GridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */; };
 		A56F48A171A79B667DB1C4A6 /* Pods_RedbubbleHomeworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */; };
 		B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */; };
-		B0E6F8FF1F29648500B68A69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FE1F29648500B68A69 /* ViewController.swift */; };
 		B0E6F9021F29648500B68A69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9001F29648500B68A69 /* Main.storyboard */; };
 		B0E6F9041F29648500B68A69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9031F29648500B68A69 /* Assets.xcassets */; };
 		B0E6F9071F29648500B68A69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9051F29648500B68A69 /* LaunchScreen.storyboard */; };
-		B0E6F9121F29648500B68A69 /* RedbubbleHomeworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F9111F29648500B68A69 /* RedbubbleHomeworkTests.swift */; };
 		B0E6F9251F29A88D00B68A69 /* RedbubbleRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F9231F29A88D00B68A69 /* RedbubbleRealm.swift */; };
 		B0E6F9261F29A88D00B68A69 /* RealmModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F9241F29A88D00B68A69 /* RealmModels.swift */; };
 		C57FF860E531B3AAD85F4739 /* Pods_RedbubbleHomework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DE2BED2DFDA1624C905A4E /* Pods_RedbubbleHomework.framework */; };
@@ -43,17 +48,22 @@
 		5D75E4341F3DEEB000843CB7 /* RSWork+Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "RSWork+Realm.swift"; sourceTree = "<group>"; };
 		5D75E4351F3DEEB000843CB7 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		5D75E43B1F3E9E9200843CB7 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		5D75E43D1F3EA2F900843CB7 /* RealmTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmTests.swift; sourceTree = "<group>"; };
+		5D75E4401F3EBFD800843CB7 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		5D75E4421F3EC42900843CB7 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		5D75E4451F3EC63C00843CB7 /* UIColorPalette.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorPalette.swift; sourceTree = "<group>"; };
+		5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPageViewController.swift; sourceTree = "<group>"; };
+		5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewController.swift; sourceTree = "<group>"; };
 		6640C8F077AACFA00C5836F2 /* Pods-RedbubbleHomework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomework/Pods-RedbubbleHomework.debug.xcconfig"; sourceTree = "<group>"; };
 		6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedbubbleHomeworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8F91F29648500B68A69 /* RedbubbleHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedbubbleHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B0E6F8FE1F29648500B68A69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B0E6F9011F29648500B68A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B0E6F9031F29648500B68A69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0E6F9061F29648500B68A69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B0E6F9081F29648500B68A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E6F90D1F29648500B68A69 /* RedbubbleHomeworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RedbubbleHomeworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0E6F9111F29648500B68A69 /* RedbubbleHomeworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedbubbleHomeworkTests.swift; sourceTree = "<group>"; };
 		B0E6F9131F29648500B68A69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0E6F9231F29A88D00B68A69 /* RedbubbleRealm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RedbubbleRealm.swift; path = Realm/RedbubbleRealm.swift; sourceTree = "<group>"; };
 		B0E6F9241F29A88D00B68A69 /* RealmModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RealmModels.swift; path = Realm/RealmModels.swift; sourceTree = "<group>"; };
@@ -99,6 +109,33 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		5D75E43F1F3EBF7B00843CB7 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				5D75E4401F3EBFD800843CB7 /* HomeViewController.swift */,
+				5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */,
+				5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */,
+				5D75E4421F3EC42900843CB7 /* SearchViewController.swift */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		5D75E4441F3EC62B00843CB7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				5D75E4451F3EC63C00843CB7 /* UIColorPalette.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		5D75E44F1F3ECFA700843CB7 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */,
+			);
+			name = Extension;
+			sourceTree = "<group>";
+		};
 		772A9BEE6DF32AEBB962ADBC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,10 +170,12 @@
 		B0E6F8FB1F29648500B68A69 /* RedbubbleHomework */ = {
 			isa = PBXGroup;
 			children = (
+				B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */,
+				5D75E44F1F3ECFA700843CB7 /* Extension */,
+				5D75E4441F3EC62B00843CB7 /* UI */,
 				5D75E43A1F3E9E8700843CB7 /* Helper */,
 				5D75E4311F3DE64200843CB7 /* Model */,
-				B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */,
-				B0E6F8FE1F29648500B68A69 /* ViewController.swift */,
+				5D75E43F1F3EBF7B00843CB7 /* Main */,
 				B0E6F9001F29648500B68A69 /* Main.storyboard */,
 				B0E6F9031F29648500B68A69 /* Assets.xcassets */,
 				B0E6F9051F29648500B68A69 /* LaunchScreen.storyboard */,
@@ -149,7 +188,7 @@
 		B0E6F9101F29648500B68A69 /* RedbubbleHomeworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				B0E6F9111F29648500B68A69 /* RedbubbleHomeworkTests.swift */,
+				5D75E43D1F3EA2F900843CB7 /* RealmTests.swift */,
 				B0E6F9131F29648500B68A69 /* Info.plist */,
 			);
 			path = RedbubbleHomeworkTests;
@@ -377,13 +416,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D75E4511F3ED08400843CB7 /* GridCollectionViewController.swift in Sources */,
+				5D75E4431F3EC42900843CB7 /* SearchViewController.swift in Sources */,
 				B0E6F9251F29A88D00B68A69 /* RedbubbleRealm.swift in Sources */,
 				5D75E4381F3DEEB000843CB7 /* RSWork+Realm.swift in Sources */,
 				5D75E4361F3DEEB000843CB7 /* RSArtist+Realm.swift in Sources */,
+				5D75E4461F3EC63C00843CB7 /* UIColorPalette.swift in Sources */,
 				B0E6F9261F29A88D00B68A69 /* RealmModels.swift in Sources */,
 				5D75E4391F3DEEB000843CB7 /* User.swift in Sources */,
+				5D75E4411F3EBFD800843CB7 /* HomeViewController.swift in Sources */,
+				5D75E44E1F3ECF9C00843CB7 /* UIStoryboardExtension.swift in Sources */,
 				5D75E43C1F3E9E9200843CB7 /* RealmManager.swift in Sources */,
-				B0E6F8FF1F29648500B68A69 /* ViewController.swift in Sources */,
+				5D75E44A1F3ECAAC00843CB7 /* GridPageViewController.swift in Sources */,
 				5D75E4371F3DEEB000843CB7 /* RSProduct+Realm.swift in Sources */,
 				B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */,
 			);
@@ -393,7 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E6F9121F29648500B68A69 /* RedbubbleHomeworkTests.swift in Sources */,
+				5D75E43E1F3EA2F900843CB7 /* RealmTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
