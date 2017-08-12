@@ -19,6 +19,10 @@
 		5D75E44A1F3ECAAC00843CB7 /* GridPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */; };
 		5D75E44E1F3ECF9C00843CB7 /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */; };
 		5D75E4511F3ED08400843CB7 /* GridCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */; };
+		5D75E4531F3EEC2F00843CB7 /* UIImageView+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4521F3EEC2F00843CB7 /* UIImageView+Networking.swift */; };
+		5D75E4551F3EF2B300843CB7 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4541F3EF2B300843CB7 /* ImageCache.swift */; };
+		5D75E4571F3EF87700843CB7 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4561F3EF87700843CB7 /* ImageDownloader.swift */; };
+		5D75E4591F3EFF4E00843CB7 /* UIImageStatic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4581F3EFF4E00843CB7 /* UIImageStatic.swift */; };
 		A56F48A171A79B667DB1C4A6 /* Pods_RedbubbleHomeworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */; };
 		B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */; };
 		B0E6F9021F29648500B68A69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9001F29648500B68A69 /* Main.storyboard */; };
@@ -55,6 +59,10 @@
 		5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPageViewController.swift; sourceTree = "<group>"; };
 		5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewController.swift; sourceTree = "<group>"; };
+		5D75E4521F3EEC2F00843CB7 /* UIImageView+Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Networking.swift"; sourceTree = "<group>"; };
+		5D75E4541F3EF2B300843CB7 /* ImageCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		5D75E4561F3EF87700843CB7 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		5D75E4581F3EFF4E00843CB7 /* UIImageStatic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageStatic.swift; sourceTree = "<group>"; };
 		6640C8F077AACFA00C5836F2 /* Pods-RedbubbleHomework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomework/Pods-RedbubbleHomework.debug.xcconfig"; sourceTree = "<group>"; };
 		6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedbubbleHomeworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8F91F29648500B68A69 /* RedbubbleHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedbubbleHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				5D75E43B1F3E9E9200843CB7 /* RealmManager.swift */,
+				5D75E4541F3EF2B300843CB7 /* ImageCache.swift */,
+				5D75E4561F3EF87700843CB7 /* ImageDownloader.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -124,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				5D75E4451F3EC63C00843CB7 /* UIColorPalette.swift */,
+				5D75E4581F3EFF4E00843CB7 /* UIImageStatic.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -132,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */,
+				5D75E4521F3EEC2F00843CB7 /* UIImageView+Networking.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -417,7 +429,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D75E4511F3ED08400843CB7 /* GridCollectionViewController.swift in Sources */,
+				5D75E4591F3EFF4E00843CB7 /* UIImageStatic.swift in Sources */,
 				5D75E4431F3EC42900843CB7 /* SearchViewController.swift in Sources */,
+				5D75E4551F3EF2B300843CB7 /* ImageCache.swift in Sources */,
 				B0E6F9251F29A88D00B68A69 /* RedbubbleRealm.swift in Sources */,
 				5D75E4381F3DEEB000843CB7 /* RSWork+Realm.swift in Sources */,
 				5D75E4361F3DEEB000843CB7 /* RSArtist+Realm.swift in Sources */,
@@ -425,8 +439,10 @@
 				B0E6F9261F29A88D00B68A69 /* RealmModels.swift in Sources */,
 				5D75E4391F3DEEB000843CB7 /* User.swift in Sources */,
 				5D75E4411F3EBFD800843CB7 /* HomeViewController.swift in Sources */,
+				5D75E4571F3EF87700843CB7 /* ImageDownloader.swift in Sources */,
 				5D75E44E1F3ECF9C00843CB7 /* UIStoryboardExtension.swift in Sources */,
 				5D75E43C1F3E9E9200843CB7 /* RealmManager.swift in Sources */,
+				5D75E4531F3EEC2F00843CB7 /* UIImageView+Networking.swift in Sources */,
 				5D75E44A1F3ECAAC00843CB7 /* GridPageViewController.swift in Sources */,
 				5D75E4371F3DEEB000843CB7 /* RSProduct+Realm.swift in Sources */,
 				B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */,
