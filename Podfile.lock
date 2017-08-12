@@ -1,4 +1,5 @@
 PODS:
+  - Nimble (6.0.1)
   - Realm (2.8.3):
     - Realm/Headers (= 2.8.3)
   - Realm/Headers (2.8.3)
@@ -6,12 +7,14 @@ PODS:
     - Realm (= 2.8.3)
 
 DEPENDENCIES:
-  - RealmSwift
+  - Nimble (~> 6.0.0)
+  - RealmSwift (= 2.8.3)
 
 SPEC CHECKSUMS:
+  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
 
-PODFILE CHECKSUM: 8b9c453217040ec8b680234d586c5b994f25f014
+PODFILE CHECKSUM: 0f1d67cf88fc01d9e9175ffb26d0a3876fadce1f
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.2.1

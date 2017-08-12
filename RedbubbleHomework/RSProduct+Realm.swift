@@ -10,10 +10,12 @@ import Foundation
 import RealmSwift
 
 extension RSProduct {
-    class func items(for product: RSProduct,
-                     hasImage: Bool? = nil,
-                     isActive: Bool? = nil,
-                     withUpdateNotificationBlock block: ((RealmCollectionChange<Results<RSProduct>>) -> Void)?) -> (Results<RSProduct>, NotificationToken?) {
+    class func items(with filter: String? = nil,
+                     workId: String? = nil,
+                     productType: String? = nil,
+                     withUpdateNotificationBlock block: ((RealmCollectionChange<Results<RSProduct>>) -> Void)?)
+        -> (Results<RSProduct>, NotificationToken?) {
+            
         let realm = RealmManager.shared.realm ?? RealmManager.shared.newRealm()
         var results = realm.objects(RSProduct.self)
 

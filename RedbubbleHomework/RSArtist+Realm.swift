@@ -10,15 +10,23 @@ import Foundation
 import RealmSwift
 
 extension RSArtist {
-    class func items(for product: RSArtist,
-                     hasImage: Bool? = nil,
-                     isActive: Bool? = nil,
-                     withUpdateNotificationBlock block: ((RealmCollectionChange<Results<RSProduct>>) -> Void)?) -> (Results<RSProduct>, NotificationToken?) {
-        let realm = RealmManager.shared.realm ?? RealmManager.shared.newRealm()
-        var results = realm.objects(RSProduct.self)
+    class func items(with keyword: String? = nil,
+                     withUpdateNotificationBlock block: ((RealmCollectionChange<Results<RSArtist>>) -> Void)?)
+        -> (Results<RSArtist>, NotificationToken?) {
+            
+            let realm = RealmManager.shared.realm ?? RealmManager.shared.newRealm()
+            var results = realm.objects(RSArtist.self)
+            
+//            if let keyword = keyword {
+//                var filtered = results.filter { artist in
+//                    artist.name.contains(keyword)
+//                }
+//                
+//                return (filtered, notificationToken)
+//            }
 
-        results = results.sorted(byKeyPath: "_order")
-        let notificationToken = block != nil ? results.addNotificationBlock(block!) : nil
-        return (results, notificationToken)
+            
+            let notificationToken = block != nil ? results.addNotificationBlock(block!) : nil
+            return (results, notificationToken)
     }
 }
