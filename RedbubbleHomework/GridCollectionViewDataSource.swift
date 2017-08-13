@@ -67,23 +67,5 @@ extension GridCollectionViewDataSource : UICollectionViewDataSource {
         }
         
         return cell
-        
-//        switch page {
-//        case .product:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resuableCellIdentifier, for: indexPath) as? ProductGridCollectionViewCell
-//            if let _ = cell {
-//                cell?.product = products[indexPath.row]
-//                return cell!
-//            }
-//        case .artwork:
-//            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: resuableCellIdentifier, for: indexPath) as? ArtworkGridCollectionViewCell
-//            if let _ = cell {
-//                cell?.artwork = artworks[indexPath.row]
-//                return cell!
-//            }
-//        }
-//        let c = UICollectionViewCell()
-//        return c
-        
     }
 }

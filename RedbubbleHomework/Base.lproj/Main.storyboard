@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNS-Iw-wda">
-                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <subviews>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="siD-SK-2ol">
-                                        <rect key="frame" x="16" y="6" width="343" height="29"/>
+                                        <rect key="frame" x="16" y="8" width="343" height="35"/>
                                         <segments>
                                             <segment title="All"/>
                                             <segment title="" image="icon-heart-filled"/>
@@ -33,17 +33,17 @@
                                         </segments>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="siD-SK-2ol" firstAttribute="top" secondItem="zNS-Iw-wda" secondAttribute="top" constant="6" id="3YM-QM-PNf"/>
-                                    <constraint firstAttribute="bottom" secondItem="siD-SK-2ol" secondAttribute="bottom" constant="6" id="Ewm-Ib-wwl"/>
-                                    <constraint firstAttribute="height" constant="40" id="SzE-AN-VBc"/>
+                                    <constraint firstItem="siD-SK-2ol" firstAttribute="top" secondItem="zNS-Iw-wda" secondAttribute="top" constant="8" id="3YM-QM-PNf"/>
+                                    <constraint firstAttribute="bottom" secondItem="siD-SK-2ol" secondAttribute="bottom" constant="8" id="Ewm-Ib-wwl"/>
+                                    <constraint firstAttribute="height" constant="50" id="SzE-AN-VBc"/>
                                     <constraint firstAttribute="trailing" secondItem="siD-SK-2ol" secondAttribute="trailing" constant="16" id="cMT-rK-od1"/>
                                     <constraint firstItem="siD-SK-2ol" firstAttribute="leading" secondItem="zNS-Iw-wda" secondAttribute="leading" constant="16" id="oba-zV-oqh"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Y5-s6B">
-                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <connections>
                                     <segue destination="Go2-VK-JtT" kind="embed" id="Vmq-xx-rbl"/>
                                 </connections>
@@ -51,12 +51,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ozm-Y5-s6B" secondAttribute="bottom" id="1yg-H9-oFF"/>
                             <constraint firstItem="ozm-Y5-s6B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Nd-Kj-KZW"/>
                             <constraint firstItem="zNS-Iw-wda" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Af-cW-Exa"/>
                             <constraint firstAttribute="trailing" secondItem="ozm-Y5-s6B" secondAttribute="trailing" id="FB0-wa-kfP"/>
                             <constraint firstAttribute="trailing" secondItem="zNS-Iw-wda" secondAttribute="trailing" id="KrU-6Q-KY2"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ozm-Y5-s6B" secondAttribute="bottom" id="Oy4-UO-vkK"/>
-                            <constraint firstItem="ozm-Y5-s6B" firstAttribute="top" secondItem="zNS-Iw-wda" secondAttribute="bottom" constant="8" id="dCh-5A-q6d"/>
+                            <constraint firstItem="ozm-Y5-s6B" firstAttribute="top" secondItem="zNS-Iw-wda" secondAttribute="bottom" id="dCh-5A-q6d"/>
                             <constraint firstItem="zNS-Iw-wda" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zg6-xz-KTv"/>
                         </constraints>
                     </view>
@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1017" y="-635"/>
+            <point key="canvasLocation" x="1057" y="-583"/>
         </scene>
         <!--Search-->
         <scene sceneID="8Qr-YK-i3P">
@@ -83,16 +83,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wvs-VF-7Mk">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wvs-VF-7Mk" id="ikf-tL-ioW">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="0v6-tj-ykJ" id="U1L-s3-crG"/>
                             <outlet property="delegate" destination="0v6-tj-ykJ" id="CJh-qe-afC"/>
@@ -104,15 +94,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F15-31-ynp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="-1315"/>
+            <point key="canvasLocation" x="1892" y="-1329"/>
         </scene>
         <!--Grid Page View Controller-->
         <scene sceneID="4ib-gJ-H6s">
             <objects>
-                <pageViewController storyboardIdentifier="GridPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="min" doubleSided="YES" id="Go2-VK-JtT" customClass="GridPageViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="GridPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Go2-VK-JtT" customClass="GridPageViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYv-yP-27d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="-636"/>
+            <point key="canvasLocation" x="1878" y="-635"/>
         </scene>
         <!--Grid Collection View Controller-->
         <scene sceneID="r4L-lS-JdT">
@@ -134,10 +124,12 @@
                             <outlet property="delegate" destination="rsR-5J-Qzr" id="Goh-0c-Ycf"/>
                         </connections>
                     </collectionView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igP-Ou-JpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2556" y="-636.4317841079461"/>
+            <point key="canvasLocation" x="2489" y="-579"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="52d-66-Ihj">
