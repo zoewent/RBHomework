@@ -9,12 +9,23 @@
 import UIKit
 
 class GridCollectionViewController: UICollectionViewController {
+    
+    enum ItemCategory {
+        case all
+        case saved
+        case unsaved
+    }
 
     var page: Page?
     var products: [RSProduct]?
     var artworks:[RSWork]?
     fileprivate var pageType = Page.product
     fileprivate var collectionViewDataSource: GridCollectionViewDataSource?
+    fileprivate var category: ItemCategory = .all {
+        didSet {
+            resetDataSource()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +36,7 @@ class GridCollectionViewController: UICollectionViewController {
         
         pageType = page!
         
-        collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [], artworks: artworks ?? [])
+        resetDataSource()
         
         guard let collectionViewDataSource = collectionViewDataSource else { return }
         
@@ -34,6 +45,23 @@ class GridCollectionViewController: UICollectionViewController {
         
         let cellNib = UINib(nibName: collectionViewDataSource.resuableCellIdentifier, bundle: Bundle.main)
         collectionView?.register(cellNib, forCellWithReuseIdentifier: collectionViewDataSource.resuableCellIdentifier)
+    }
+    
+    fileprivate func resetDataSource() {
+        switch category {
+        case .all:
+            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [], artworks: artworks ?? [])
+        case .saved:
+            let savedProducts = products?.filter { $0.isSaved }
+            let savedArtwork = artworks?.filter { $0.isSaved }
+            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: savedProducts ?? [], artworks: savedArtwork ?? [])
+        case .unsaved:
+            let unsavedProducts = products?.filter { !$0.isSaved }
+            let unsavedArtwork = artworks?.filter { !$0.isSaved }
+            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: unsavedProducts ?? [], artworks: unsavedArtwork ?? [])
+        }
+        
+        collectionView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

@@ -11,6 +11,8 @@ import UIKit
 fileprivate let ProductGridCollectionViewCellIdentifier = "ProductGridCollectionViewCell"
 fileprivate let ArtworkGridCollectionViewCellIdentifier = "ArtworkGridCollectionViewCell"
 
+
+
 class GridCollectionViewDataSource: NSObject {
     var page: Page
     var resuableCellIdentifier: String
@@ -34,6 +36,8 @@ class GridCollectionViewDataSource: NSObject {
             self.artworks = artworks
         }
     }
+    
+    
 }
 
 extension GridCollectionViewDataSource : UICollectionViewDataSource {
