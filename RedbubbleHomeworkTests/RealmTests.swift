@@ -22,13 +22,13 @@ class RealmTests: XCTestCase {
     
     func testGetArtist() {
         
-        var artists: [RSArtist] = []
-        
-        RSArtist.items(with: "") { results in
-            
-            
-        }
-        
-        expect(artists).toEventuallyNot(beNil())
+//        var artists: [RSArtist] = []
+//        
+//        _ = RSArtist.items(with: "") { results in
+//            
+//            artists = results.map { $0 as RSArtist }
+//        }
+//        
+//        expect(artists).toEventuallyNot(beNil())
     }
 }

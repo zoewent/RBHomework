@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Products-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="HomeViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController">
@@ -60,7 +60,13 @@
                             <constraint firstItem="zNS-Iw-wda" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zg6-xz-KTv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Products" id="dpK-He-Jdu"/>
+                    <navigationItem key="navigationItem" id="dpK-He-Jdu">
+                        <barButtonItem key="rightBarButtonItem" image="icon_search" id="ZDr-fz-KuH">
+                            <connections>
+                                <segue destination="0v6-tj-ykJ" kind="show" id="gkD-hh-QgD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="segmentedControl" destination="siD-SK-2ol" id="q52-qb-HLj"/>
                     </connections>
@@ -69,13 +75,44 @@
             </objects>
             <point key="canvasLocation" x="1017" y="-635"/>
         </scene>
+        <!--Search-->
+        <scene sceneID="8Qr-YK-i3P">
+            <objects>
+                <tableViewController storyboardIdentifier="SearchTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0v6-tj-ykJ" customClass="SearchTableViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="6mi-cg-Vmv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="wvs-VF-7Mk">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wvs-VF-7Mk" id="ikf-tL-ioW">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="0v6-tj-ykJ" id="U1L-s3-crG"/>
+                            <outlet property="delegate" destination="0v6-tj-ykJ" id="CJh-qe-afC"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="HJb-1k-AkB">
+                        <barButtonItem key="backBarButtonItem" title="Cancel" id="Nun-LC-8JT"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F15-31-ynp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1828" y="-1315"/>
+        </scene>
         <!--Grid Page View Controller-->
         <scene sceneID="4ib-gJ-H6s">
             <objects>
-                <pageViewController storyboardIdentifier="GridPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="Go2-VK-JtT" customClass="GridPageViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="GridPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="min" doubleSided="YES" id="Go2-VK-JtT" customClass="GridPageViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYv-yP-27d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1826" y="-634"/>
+            <point key="canvasLocation" x="1828" y="-636"/>
         </scene>
         <!--Grid Collection View Controller-->
         <scene sceneID="r4L-lS-JdT">
@@ -86,7 +123,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p79-HH-6v3">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="174" height="167"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -100,7 +137,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igP-Ou-JpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2527" y="-612"/>
+            <point key="canvasLocation" x="2556" y="-636.4317841079461"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="52d-66-Ihj">
@@ -124,5 +161,6 @@
     <resources>
         <image name="icon-heart" width="40" height="40"/>
         <image name="icon-heart-filled" width="40" height="40"/>
+        <image name="icon_search" width="40" height="40"/>
     </resources>
 </document>

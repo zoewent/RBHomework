@@ -8,8 +8,9 @@ import RealmSwift
 class RedbubbleRealm {
 
     init() {
-        let defaultPath = Realm.Configuration.defaultConfiguration.fileURL?.path ?? ""
+        let defaultPath = RealmManager.shared.defaultConfiguration.fileURL?.path ?? ""
         let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
+//        setupRealm()
         if !alreadyExists {
             setupRealm()
         }
@@ -119,19 +120,21 @@ class RedbubbleRealm {
                      avatarImageUrl: "https://ih1.redbubble.net/avatar.510078.100x100.jpg")
             ]
 
-        let realm = try! Realm()
-        try! realm.write {
-
-            for work in works {
-                realm.add(work)
-            }
-
-            for product in products {
-                realm.add(product)
-            }
-
-            for artist in artists {
-                realm.add(artist)
+        
+        if let realm = RealmManager.shared.realm {
+            try! realm.write {
+                
+                for work in works {
+                    realm.add(work)
+                }
+                
+                for product in products {
+                    realm.add(product)
+                }
+                
+                for artist in artists {
+                    realm.add(artist)
+                }
             }
         }
     }

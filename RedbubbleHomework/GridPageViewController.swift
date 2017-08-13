@@ -23,14 +23,17 @@ class GridPageViewController: UIPageViewController {
                 return
             }
             let direction: UIPageViewControllerNavigationDirection = currentPage.rawValue > oldValue.rawValue ? .forward : .reverse
+            
             setViewControllers(
                 [gridViewControllers[currentPage.rawValue]],
                 direction: direction,
-                animated: true,
+                animated: false,
                 completion: nil)
         }
     }
     
+    var products: [RSProduct]?
+    var artworks:[RSWork]?
     fileprivate var gridViewControllers = [GridCollectionViewController]()
 
     override func viewDidLoad() {
@@ -38,10 +41,9 @@ class GridPageViewController: UIPageViewController {
 
         delegate = self
         dataSource = self
-        
+        fetch()
         instantiatePages()
-//        updateDataSource()
-//        fetch()
+        
         setViewControllers(
             [gridViewControllers[currentPage.rawValue]],
             direction: .forward,
@@ -51,7 +53,6 @@ class GridPageViewController: UIPageViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     fileprivate func instantiatePages() {
@@ -60,45 +61,71 @@ class GridPageViewController: UIPageViewController {
         let productGrid = UIStoryboard(storyboard: .main).instantiateViewController() as GridCollectionViewController
         let artworkGrid = UIStoryboard(storyboard: .main).instantiateViewController() as GridCollectionViewController
         productGrid.page = .product
+        productGrid.products = products ?? []
         artworkGrid.page = .artwork
+        artworkGrid.artworks = artworks ?? []
         
         gridViewControllers.append(productGrid)
         gridViewControllers.append(artworkGrid)
 
     }
     
+    fileprivate func fetch() {
+        products = RealmManager.shared.realm.objects(RSProduct.self).map { $0 as RSProduct }
+        artworks = RealmManager.shared.realm.objects(RSWork.self).map { $0 as RSWork }
+    }
+    
     fileprivate func reloadPages() {
-//        gridViewControllers[Page.product.rawValue] =
+        
     }
 }
 
 extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
+    
+    
+    func presentationCountForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return gridViewControllers.count
+    }
+    
+    func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
+        return currentPage.rawValue
+    }
+    
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
             if index == 0 {
                 return nil
+            } else {
+                currentPage = .product
+                return gridViewControllers.first
             }
-            return gridViewControllers[index - 1]
+            
         }
         
         return nil
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
-            if index == gridViewControllers.count - 1 {
+            
+            if index == 0 {
+                currentPage = .artwork
+                return gridViewControllers.last
+            } else {
                 return nil
             }
-            return gridViewControllers[index + 1]
         }
         
         return nil
     }
     
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
-                            previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+//    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
+//                            previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+//        
+//        
+//        
 //        if let index = gridViewControllers.index(of: pageViewController.viewControllers![0] as! GridCollectionViewController) {
 //            currentPage = Page(rawValue: index) ?? Page.initialPage
 //        }
-//        menuPageDelegate?.menuPageView(self, didScrollToPage: currentPage)
-    }
+////        menuPageDelegate?.menuPageView(self, didScrollToPage: currentPage)
+//    }
 }
