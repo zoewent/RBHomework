@@ -37,6 +37,9 @@ class GridCollectionViewController: UICollectionViewController {
         self.collectionView?.delegate = self
         self.collectionView?.dataSource = collectionViewDataSource
         
+        let headerNib = UINib(nibName: GridCollectionViewSectionHeaderIdentifier, bundle: Bundle.main)
+        collectionView?.register(headerNib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: GridCollectionViewSectionHeaderIdentifier)
+        
         let cellNib = UINib(nibName: collectionViewDataSource.resuableCellIdentifier, bundle: Bundle.main)
         collectionView?.register(cellNib, forCellWithReuseIdentifier: collectionViewDataSource.resuableCellIdentifier)
     }
@@ -56,6 +59,10 @@ class GridCollectionViewController: UICollectionViewController {
         }
         
         collectionView?.reloadData()
+    }
+    
+    private func setupHeader() {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -125,4 +132,11 @@ extension GridCollectionViewController : UICollectionViewDelegateFlowLayout {
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return sectionInsets.left
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: view.frame.width, height: 50.0)
+    }
+
 }

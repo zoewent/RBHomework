@@ -32,6 +32,8 @@
 		5D75E4751F404E6200843CB7 /* ArtworkGridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4731F404E6200843CB7 /* ArtworkGridCollectionViewCell.swift */; };
 		5D75E4761F404E6200843CB7 /* ArtworkGridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D75E4741F404E6200843CB7 /* ArtworkGridCollectionViewCell.xib */; };
 		5D75E47A1F40676400843CB7 /* UINibExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E4791F40676400843CB7 /* UINibExtension.swift */; };
+		5D75E47D1F41B8D300843CB7 /* GridCollectionViewSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D75E47B1F41B8D300843CB7 /* GridCollectionViewSectionHeader.swift */; };
+		5D75E47E1F41B8D300843CB7 /* GridCollectionViewSectionHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D75E47C1F41B8D300843CB7 /* GridCollectionViewSectionHeader.xib */; };
 		A56F48A171A79B667DB1C4A6 /* Pods_RedbubbleHomeworkTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */; };
 		B0E6F8FD1F29648500B68A69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E6F8FC1F29648500B68A69 /* AppDelegate.swift */; };
 		B0E6F9021F29648500B68A69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E6F9001F29648500B68A69 /* Main.storyboard */; };
@@ -81,6 +83,8 @@
 		5D75E4731F404E6200843CB7 /* ArtworkGridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtworkGridCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D75E4741F404E6200843CB7 /* ArtworkGridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtworkGridCollectionViewCell.xib; sourceTree = "<group>"; };
 		5D75E4791F40676400843CB7 /* UINibExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINibExtension.swift; sourceTree = "<group>"; };
+		5D75E47B1F41B8D300843CB7 /* GridCollectionViewSectionHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewSectionHeader.swift; sourceTree = "<group>"; };
+		5D75E47C1F41B8D300843CB7 /* GridCollectionViewSectionHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GridCollectionViewSectionHeader.xib; sourceTree = "<group>"; };
 		6640C8F077AACFA00C5836F2 /* Pods-RedbubbleHomework.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RedbubbleHomework.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RedbubbleHomework/Pods-RedbubbleHomework.debug.xcconfig"; sourceTree = "<group>"; };
 		6B6964C39C599211A8306985 /* Pods_RedbubbleHomeworkTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RedbubbleHomeworkTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E6F8F91F29648500B68A69 /* RedbubbleHomework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedbubbleHomework.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -144,6 +148,8 @@
 				5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */,
 				5D75E4671F4022B200843CB7 /* GridCollectionViewDataSource.swift */,
 				5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */,
+				5D75E47B1F41B8D300843CB7 /* GridCollectionViewSectionHeader.swift */,
+				5D75E47C1F41B8D300843CB7 /* GridCollectionViewSectionHeader.xib */,
 				5D75E46D1F404E2F00843CB7 /* ProductGridCollectionViewCell.swift */,
 				5D75E46E1F404E2F00843CB7 /* ProductGridCollectionViewCell.xib */,
 				5D75E4731F404E6200843CB7 /* ArtworkGridCollectionViewCell.swift */,
@@ -350,6 +356,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D75E47E1F41B8D300843CB7 /* GridCollectionViewSectionHeader.xib in Resources */,
 				5D75E4701F404E2F00843CB7 /* ProductGridCollectionViewCell.xib in Resources */,
 				5D75E4761F404E6200843CB7 /* ArtworkGridCollectionViewCell.xib in Resources */,
 				B0E6F9071F29648500B68A69 /* LaunchScreen.storyboard in Resources */,
@@ -481,6 +488,7 @@
 				5D75E44E1F3ECF9C00843CB7 /* UIStoryboardExtension.swift in Sources */,
 				5D75E46F1F404E2F00843CB7 /* ProductGridCollectionViewCell.swift in Sources */,
 				5D75E4751F404E6200843CB7 /* ArtworkGridCollectionViewCell.swift in Sources */,
+				5D75E47D1F41B8D300843CB7 /* GridCollectionViewSectionHeader.swift in Sources */,
 				5D75E43C1F3E9E9200843CB7 /* RealmManager.swift in Sources */,
 				5D75E4531F3EEC2F00843CB7 /* UIImageView+Networking.swift in Sources */,
 				5D75E44A1F3ECAAC00843CB7 /* GridPageViewController.swift in Sources */,

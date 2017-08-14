@@ -10,7 +10,7 @@ import UIKit
 
 fileprivate let ProductGridCollectionViewCellIdentifier = "ProductGridCollectionViewCell"
 fileprivate let ArtworkGridCollectionViewCellIdentifier = "ArtworkGridCollectionViewCell"
-fileprivate let GridCollectionViewSectionHeaderIdentifier = "GridCollectionViewSectionHeader"
+let GridCollectionViewSectionHeaderIdentifier = "GridCollectionViewSectionHeader"
 
 
 class GridCollectionViewDataSource: NSObject {
@@ -72,10 +72,18 @@ extension GridCollectionViewDataSource : UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader,
                                                                          withReuseIdentifier: GridCollectionViewSectionHeaderIdentifier,
                                                                          for: indexPath)
-        
         return headerView
     }
+    
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+//                                                                         withReuseIdentifier: GridCollectionViewSectionHeaderIdentifier,
+//                                                                         for: indexPath)
+//        
+//        return headerView
+//    }
 }

@@ -97,12 +97,12 @@ class GridPageViewController: UIPageViewController {
 
 extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
-    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
-        return 0
-    }
-    func presentationCount(for pageViewController: UIPageViewController) -> Int {
-        return gridViewControllers.count
-    }
+//    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+//        return 0
+//    }
+//    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+//        return gridViewControllers.count
+//    }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
