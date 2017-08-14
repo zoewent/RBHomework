@@ -77,7 +77,21 @@ class GridCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        switch pageType {
+        case .product:
+            let product = products?[indexPath.row]
+            if let workId = product?.workId {
+                let artwork = RealmManager.shared.realm.object(ofType: RSWork.self, forPrimaryKey: workId)
+                print(artwork?.artistName ?? "")
+            }
+            
+        case .artwork:
+            let artwork = artworks?[indexPath.row]
+            if let artistName = artwork?.artistName {
+                let artist = RealmManager.shared.realm.object(ofType: RSArtist.self, forPrimaryKey: artistName)
+                print(artist?.avatarImageUrl ?? "")
+            }
+        }
     }
 
     /*
