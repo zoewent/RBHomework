@@ -10,5 +10,5 @@ import Foundation
 import UIKit
 
 struct ColorPalette {
-    static let rbRed = UIColor(red:0.91, green:0.05, blue:0.07, alpha:1.0)
+    static let rbRed = UIColor(red:0.91, green:0.25, blue:0.29, alpha:1.0)
 }
