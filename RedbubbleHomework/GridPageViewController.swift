@@ -21,7 +21,7 @@ enum ItemCategory {
     case unsaved
 }
 
-class GridPageViewController: UIPageViewController {
+class GridPageViewController: UIPageViewController, HomeViewControllerSegmentable {
     
     var currentPage: Page = Page.initialPage {
         didSet {
@@ -40,22 +40,23 @@ class GridPageViewController: UIPageViewController {
 
     var itemCategory: ItemCategory = .all {
         didSet{
-//            switch currentPage {
-//            case .product:
-//
-//            }
+            print("\(itemCategory)")
         }
     }
     
     var products: [RSProduct]?
     var artworks:[RSWork]?
     fileprivate var gridViewControllers = [GridCollectionViewController]()
+    
+    var parentVC: HomeViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         delegate = self
         dataSource = self
+        parentVC?.delegate = self
+        
         fetch()
         instantiatePages()
         
@@ -90,8 +91,13 @@ class GridPageViewController: UIPageViewController {
         artworks = RealmManager.shared.realm.objects(RSWork.self).map { $0 as RSWork }
     }
     
-    fileprivate func reloadPages() {
-        
+    // MARK: HomeViewControllerSegmentable
+    
+    func resetDataSource(with category: ItemCategory) {
+        self.itemCategory = category
+        if currentPage == .artwork {
+            
+        }
     }
 }
 
@@ -123,15 +129,4 @@ extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewContr
         
         return nil
     }
-    
-//    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool,
-//                            previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-//        
-//        
-//        
-//        if let index = gridViewControllers.index(of: pageViewController.viewControllers![0] as! GridCollectionViewController) {
-//            currentPage = Page(rawValue: index) ?? Page.initialPage
-//        }
-////        menuPageDelegate?.menuPageView(self, didScrollToPage: currentPage)
-//    }
 }

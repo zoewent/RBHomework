@@ -31,6 +31,9 @@
                                             <segment title="" image="icon-heart-filled"/>
                                             <segment title="" image="icon-heart"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="segmentedChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pMC-oe-bRr"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -45,7 +48,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Y5-s6B">
                                 <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <connections>
-                                    <segue destination="Go2-VK-JtT" kind="embed" id="Vmq-xx-rbl"/>
+                                    <segue destination="Go2-VK-JtT" kind="embed" identifier="SegueIdentifierToPageViewController" id="Vmq-xx-rbl"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -129,7 +132,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igP-Ou-JpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="-579"/>
+            <point key="canvasLocation" x="2598" y="-583"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="52d-66-Ihj">

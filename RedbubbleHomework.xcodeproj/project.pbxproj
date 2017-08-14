@@ -142,8 +142,8 @@
 			children = (
 				5D75E4401F3EBFD800843CB7 /* HomeViewController.swift */,
 				5D75E4491F3ECAAC00843CB7 /* GridPageViewController.swift */,
-				5D75E4671F4022B200843CB7 /* GridCollectionViewDataSource.swift */,
 				5D75E4501F3ED08400843CB7 /* GridCollectionViewController.swift */,
+				5D75E4671F4022B200843CB7 /* GridCollectionViewDataSource.swift */,
 				5D75E46D1F404E2F00843CB7 /* ProductGridCollectionViewCell.swift */,
 				5D75E46E1F404E2F00843CB7 /* ProductGridCollectionViewCell.xib */,
 				5D75E4731F404E6200843CB7 /* ArtworkGridCollectionViewCell.swift */,

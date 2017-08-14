@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GridCollectionViewController: UICollectionViewController {
+class GridCollectionViewController: UICollectionViewController, HomeViewControllerSegmentable {
 
     var page: Page?
     var products: [RSProduct]?
@@ -17,7 +17,7 @@ class GridCollectionViewController: UICollectionViewController {
     fileprivate var collectionViewDataSource: GridCollectionViewDataSource?
     fileprivate var category: ItemCategory = .all {
         didSet {
-            resetDataSource()
+            reset()
         }
     }
     
@@ -29,8 +29,7 @@ class GridCollectionViewController: UICollectionViewController {
         }
         
         pageType = page!
-        
-        resetDataSource()
+        reset()
         
         guard let collectionViewDataSource = collectionViewDataSource else { return }
         
@@ -41,7 +40,25 @@ class GridCollectionViewController: UICollectionViewController {
         collectionView?.register(cellNib, forCellWithReuseIdentifier: collectionViewDataSource.resuableCellIdentifier)
     }
     
-    fileprivate func resetDataSource() {
+//    fileprivate func registerNotification() {
+//        let saved = Notification.Name("saved")
+//        let unsaved = Notification.Name("unsaved")
+//        let all = Notification.Name("all")
+//        
+//        NotificationCenter.default.addObserver(forName: saved, object: self, queue: nil) { _ in
+//            self.category = .saved
+//        }
+//        
+//        NotificationCenter.default.addObserver(forName: unsaved, object: self, queue: nil) { _ in
+//            self.category = .unsaved
+//        }
+//        
+//        NotificationCenter.default.addObserver(forName: all, object: self, queue: nil) { _ in
+//            self.category = .all
+//        }
+//    }
+    
+    fileprivate func reset() {
         switch category {
         case .all:
             collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [], artworks: artworks ?? [])
@@ -60,6 +77,13 @@ class GridCollectionViewController: UICollectionViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    
+    // MARK: HomeViewControllerSegmentable
+    
+    func resetDataSource(with category: ItemCategory) {
+        self.category = category
     }
     
     // MARK: UICollectionViewDelegate
