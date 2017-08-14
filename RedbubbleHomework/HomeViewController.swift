@@ -9,13 +9,11 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        segmentedControl.tintColor = ColorPalette.rbRed
+//        segmentedControl.tintColor = ColorPalette.rbRed
     }
 
     override func didReceiveMemoryWarning() {

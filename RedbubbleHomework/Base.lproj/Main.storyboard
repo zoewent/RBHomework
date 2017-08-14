@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,29 +22,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zNS-Iw-wda">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
-                                <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="siD-SK-2ol">
-                                        <rect key="frame" x="16" y="8" width="343" height="35"/>
-                                        <segments>
-                                            <segment title="All"/>
-                                            <segment title="" image="icon-heart-filled"/>
-                                            <segment title="" image="icon-heart"/>
-                                        </segments>
-                                    </segmentedControl>
-                                </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="siD-SK-2ol" firstAttribute="top" secondItem="zNS-Iw-wda" secondAttribute="top" constant="8" id="3YM-QM-PNf"/>
-                                    <constraint firstAttribute="bottom" secondItem="siD-SK-2ol" secondAttribute="bottom" constant="8" id="Ewm-Ib-wwl"/>
-                                    <constraint firstAttribute="height" constant="50" id="SzE-AN-VBc"/>
-                                    <constraint firstAttribute="trailing" secondItem="siD-SK-2ol" secondAttribute="trailing" constant="16" id="cMT-rK-od1"/>
-                                    <constraint firstItem="siD-SK-2ol" firstAttribute="leading" secondItem="zNS-Iw-wda" secondAttribute="leading" constant="16" id="oba-zV-oqh"/>
-                                </constraints>
-                            </view>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ozm-Y5-s6B">
-                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <connections>
                                     <segue destination="Go2-VK-JtT" kind="embed" id="Vmq-xx-rbl"/>
                                 </connections>
@@ -51,13 +31,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ozm-Y5-s6B" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="15E-zF-BHP"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ozm-Y5-s6B" secondAttribute="bottom" id="1yg-H9-oFF"/>
                             <constraint firstItem="ozm-Y5-s6B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Nd-Kj-KZW"/>
-                            <constraint firstItem="zNS-Iw-wda" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="7Af-cW-Exa"/>
                             <constraint firstAttribute="trailing" secondItem="ozm-Y5-s6B" secondAttribute="trailing" id="FB0-wa-kfP"/>
-                            <constraint firstAttribute="trailing" secondItem="zNS-Iw-wda" secondAttribute="trailing" id="KrU-6Q-KY2"/>
-                            <constraint firstItem="ozm-Y5-s6B" firstAttribute="top" secondItem="zNS-Iw-wda" secondAttribute="bottom" id="dCh-5A-q6d"/>
-                            <constraint firstItem="zNS-Iw-wda" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="zg6-xz-KTv"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dpK-He-Jdu">
@@ -67,13 +44,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="segmentedControl" destination="siD-SK-2ol" id="q52-qb-HLj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="-583"/>
+            <point key="canvasLocation" x="1056.8" y="-583.3583208395803"/>
         </scene>
         <!--Search-->
         <scene sceneID="8Qr-YK-i3P">
@@ -102,23 +76,45 @@
                 <pageViewController storyboardIdentifier="GridPageViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="Go2-VK-JtT" customClass="GridPageViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KYv-yP-27d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1878" y="-635"/>
+            <point key="canvasLocation" x="1914" y="-562"/>
         </scene>
         <!--Grid Collection View Controller-->
         <scene sceneID="r4L-lS-JdT">
             <objects>
                 <collectionViewController storyboardIdentifier="GridCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rsR-5J-Qzr" customClass="GridCollectionViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="F3N-ss-Y8h">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="F3N-ss-Y8h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="p79-HH-6v3">
                             <size key="itemSize" width="174" height="167"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="59"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GridCollectionViewSectionHeader" id="yOn-xP-5Jw">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ncf-fC-pck">
+                                    <rect key="frame" x="24" y="14" width="327" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="yIk-K5-Z8b"/>
+                                    </constraints>
+                                    <segments>
+                                        <segment title="All"/>
+                                        <segment title="" image="icon-heart-filled"/>
+                                        <segment title="" image="icon-heart"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Ncf-fC-pck" firstAttribute="leading" secondItem="yOn-xP-5Jw" secondAttribute="leadingMargin" constant="16" id="acY-OQ-HGh"/>
+                                <constraint firstAttribute="trailingMargin" secondItem="Ncf-fC-pck" secondAttribute="trailing" constant="16" id="kMX-Tq-FlI"/>
+                                <constraint firstItem="Ncf-fC-pck" firstAttribute="centerY" secondItem="yOn-xP-5Jw" secondAttribute="centerY" id="sxw-Ju-BcC"/>
+                            </constraints>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="rsR-5J-Qzr" id="o95-qY-uIO"/>
                             <outlet property="delegate" destination="rsR-5J-Qzr" id="Goh-0c-Ycf"/>
@@ -129,7 +125,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igP-Ou-JpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="-579"/>
+            <point key="canvasLocation" x="2684" y="-534.78260869565224"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="52d-66-Ihj">
