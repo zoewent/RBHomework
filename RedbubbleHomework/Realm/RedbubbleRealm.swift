@@ -8,13 +8,11 @@ import RealmSwift
 class RedbubbleRealm {
 
     init() {
-
-        setupRealm()
-//        let defaultPath = RealmManager.shared.defaultConfiguration.fileURL?.path ?? ""
-//        let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
-//        if !alreadyExists {
-//            setupRealm()
-//        }
+        let defaultPath = RealmManager.shared.defaultConfiguration.fileURL?.path ?? ""
+        let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
+        if !alreadyExists {
+            setupRealm()
+        }
     }
 
     /// Seeds the default realm database with some products, works and artists
