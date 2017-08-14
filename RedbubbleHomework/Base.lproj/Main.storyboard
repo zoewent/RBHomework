@@ -108,7 +108,7 @@
         <scene sceneID="r4L-lS-JdT">
             <objects>
                 <collectionViewController storyboardIdentifier="GridCollectionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="rsR-5J-Qzr" customClass="GridCollectionViewController" customModule="RedbubbleHomework" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="F3N-ss-Y8h">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="F3N-ss-Y8h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

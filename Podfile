@@ -4,7 +4,6 @@ use_frameworks!
 
 def available_pods
   pod 'RealmSwift', '= 2.8.3'
-  pod 'Nimble', '~> 6.0.0'
 end
 
 target 'RedbubbleHomework' do
@@ -13,6 +12,7 @@ end
 
 target 'RedbubbleHomeworkTests' do
     available_pods
+    pod 'Nimble', '~> 6.0.0'
 end
 
 # post_install do |installer|
