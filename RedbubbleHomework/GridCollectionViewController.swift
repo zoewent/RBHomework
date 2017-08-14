@@ -8,14 +8,14 @@
 
 import UIKit
 
-class GridCollectionViewController: UICollectionViewController, HomeViewControllerSegmentable {
+class GridCollectionViewController: UICollectionViewController {
 
     var page: Page?
     var products: [RSProduct]?
     var artworks:[RSWork]?
     fileprivate var pageType = Page.product
     fileprivate var collectionViewDataSource: GridCollectionViewDataSource?
-    fileprivate var category: ItemCategory = .all {
+    var category: ItemCategory = .all {
         didSet {
             reset()
         }
@@ -40,50 +40,38 @@ class GridCollectionViewController: UICollectionViewController, HomeViewControll
         collectionView?.register(cellNib, forCellWithReuseIdentifier: collectionViewDataSource.resuableCellIdentifier)
     }
     
-//    fileprivate func registerNotification() {
-//        let saved = Notification.Name("saved")
-//        let unsaved = Notification.Name("unsaved")
-//        let all = Notification.Name("all")
-//        
-//        NotificationCenter.default.addObserver(forName: saved, object: self, queue: nil) { _ in
-//            self.category = .saved
-//        }
-//        
-//        NotificationCenter.default.addObserver(forName: unsaved, object: self, queue: nil) { _ in
-//            self.category = .unsaved
-//        }
-//        
-//        NotificationCenter.default.addObserver(forName: all, object: self, queue: nil) { _ in
-//            self.category = .all
-//        }
-//    }
-    
     fileprivate func reset() {
-        switch category {
-        case .all:
-            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [], artworks: artworks ?? [])
-        case .saved:
-            let savedProducts = products?.filter { $0.isSaved }
-            let savedArtwork = artworks?.filter { $0.isSaved }
-            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: savedProducts ?? [], artworks: savedArtwork ?? [])
-        case .unsaved:
-            let unsavedProducts = products?.filter { !$0.isSaved }
-            let unsavedArtwork = artworks?.filter { !$0.isSaved }
-            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: unsavedProducts ?? [], artworks: unsavedArtwork ?? [])
+        
+        if pageType == .product {
+            switch category {
+            case .all:
+                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [])
+            case .saved:
+                let savedProducts = products?.filter { $0.isSaved }
+                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: savedProducts ?? [])
+            case .unsaved:
+                let unsavedProducts = products?.filter { !$0.isSaved }
+                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: unsavedProducts ?? [])
+            }
+        } else {
+            switch category {
+            case .all:
+                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: artworks ?? [])
+            case .saved:
+                let savedArtwork = artworks?.filter { $0.isSaved }
+                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: savedArtwork ?? [])
+            case .unsaved:
+                let unsavedArtwork = artworks?.filter { !$0.isSaved }
+                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: unsavedArtwork ?? [])
+            }
         }
         
+        self.collectionView?.dataSource = collectionViewDataSource
         collectionView?.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    
-    // MARK: HomeViewControllerSegmentable
-    
-    func resetDataSource(with category: ItemCategory) {
-        self.category = category
     }
     
     // MARK: UICollectionViewDelegate

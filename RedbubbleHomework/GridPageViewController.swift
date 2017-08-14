@@ -96,7 +96,11 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
     func resetDataSource(with category: ItemCategory) {
         self.itemCategory = category
         if currentPage == .artwork {
-            
+            let gridVC = gridViewControllers.last
+            gridVC?.category = category
+        } else {
+            let gridVC = gridViewControllers.first
+            gridVC?.category = category
         }
     }
 }

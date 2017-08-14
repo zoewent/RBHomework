@@ -21,6 +21,7 @@ class ProductGridCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         imageView?.stylify(.default)
+        imageView.image = nil
     }
     
     private func updateUI() {
