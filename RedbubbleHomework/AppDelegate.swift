@@ -12,7 +12,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window?.tintColor = ColorPalette.rbRed
-        // Seed database
+        
         RealmManager.shared.initialiseRealm()
 
         return true
