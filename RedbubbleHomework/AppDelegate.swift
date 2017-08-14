@@ -14,7 +14,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.tintColor = ColorPalette.rbRed
         // Seed database
         RealmManager.shared.initialiseRealm()
-        _ = RedbubbleRealm()
 
         return true
     }

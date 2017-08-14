@@ -43,6 +43,7 @@ class RealmManager: NSObject {
 
         do {
             realm = try Realm()
+            _ = RedbubbleRealm()
         } catch let e as NSError {
             fatalError("Unable to initialise default Realm: \(e.localizedDescription)")
         }

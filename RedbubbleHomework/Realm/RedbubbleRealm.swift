@@ -8,12 +8,14 @@ import RealmSwift
 class RedbubbleRealm {
 
     init() {
-        let defaultPath = RealmManager.shared.defaultConfiguration.fileURL?.path ?? ""
-        let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
-//        setupRealm()
-        if !alreadyExists {
-            setupRealm()
-        }
+
+        setupRealm()
+//        let defaultPath = RealmManager.shared.defaultConfiguration.fileURL?.path ?? ""
+//        let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
+////        setupRealm()
+//        if !alreadyExists {
+//            setupRealm()
+//        }
     }
 
     /// Seeds the default realm database with some products, works and artists
@@ -121,7 +123,8 @@ class RedbubbleRealm {
             ]
 
         
-        if let realm = RealmManager.shared.realm {
+//        if let realm = RealmManager.shared.realm {
+        let realm = RealmManager.shared.newRealm()
             try! realm.write {
                 
                 for work in works {
@@ -136,6 +139,6 @@ class RedbubbleRealm {
                     realm.add(artist)
                 }
             }
-        }
+//        }
     }
 }
