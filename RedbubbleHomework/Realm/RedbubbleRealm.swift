@@ -122,22 +122,40 @@ class RedbubbleRealm {
             ]
 
         
-//        if let realm = RealmManager.shared.realm {
         let realm = RealmManager.shared.newRealm()
-            try! realm.write {
-                
-                for work in works {
-                    realm.add(work)
-                }
-                
-                for product in products {
-                    realm.add(product)
-                }
-                
-                for artist in artists {
-                    realm.add(artist)
-                }
+        try! realm.write {
+            
+            for work in works {
+                realm.add(work)
             }
+            
+            for product in products {
+                realm.add(product)
+            }
+            
+            for artist in artists {
+                realm.add(artist)
+            }
+        }
+        
+//        realm.beginWrite()
+//        for work in works {
+//            realm.add(work)
 //        }
+//
+//        for product in products {
+//            realm.add(product)
+//        }
+//
+//        for artist in artists {
+//            realm.add(artist)
+//        }
+//        
+//        do {
+//            try realm.commitWrite()
+//        } catch {
+//            fatalError("realm  ")
+//        }
+
     }
 }

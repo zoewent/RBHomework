@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol Segmentable {
+    var itemCategory: ItemCategory { get set }
+    
+}
+
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var segmentedControl: UISegmentedControl!

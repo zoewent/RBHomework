@@ -21,13 +21,11 @@ class ImageCache {
     fileprivate init() {}
     
     func loadImage(withUrl url: String, complete: @escaping (LoadImageResult) -> Void)  {
-        // check cached image
         if let cachedImage = ImageCache.shared.cache.object(forKey: url as NSString) as? UIImage {
             complete(.success(cachedImage))
             return
         }
         
-        // if not, download image from url
         ImageDownloader.shared.getDataFromUrl(url: url) { (data, response, error) in
             guard error == nil else {
                 complete(.failure(error!))

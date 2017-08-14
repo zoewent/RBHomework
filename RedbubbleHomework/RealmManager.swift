@@ -36,14 +36,12 @@ class RealmManager: NSObject {
         guard Thread.isMainThread else {
             fatalError("initialiseRealm() must be executed on the main thread")
         }
-        // Check if there is a logged in user
 
-        // If no logged in user, set default config
         Realm.Configuration.defaultConfiguration = defaultConfiguration
 
         do {
-            realm = try Realm()
             _ = RedbubbleRealm()
+            realm = try Realm()
         } catch let e as NSError {
             fatalError("Unable to initialise default Realm: \(e.localizedDescription)")
         }
