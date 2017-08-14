@@ -12,7 +12,6 @@ class RedbubbleRealm {
         setupRealm()
 //        let defaultPath = RealmManager.shared.defaultConfiguration.fileURL?.path ?? ""
 //        let alreadyExists = FileManager.default.fileExists(atPath: defaultPath)
-////        setupRealm()
 //        if !alreadyExists {
 //            setupRealm()
 //        }

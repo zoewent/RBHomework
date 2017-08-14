@@ -15,6 +15,12 @@ enum Page: Int {
     static var initialPage: Page = .product
 }
 
+enum ItemCategory {
+    case all
+    case saved
+    case unsaved
+}
+
 class GridPageViewController: UIPageViewController {
     
     var currentPage: Page = Page.initialPage {
@@ -29,6 +35,15 @@ class GridPageViewController: UIPageViewController {
                 direction: direction,
                 animated: false,
                 completion: nil)
+        }
+    }
+
+    var itemCategory: ItemCategory = .all {
+        didSet{
+//            switch currentPage {
+//            case .product:
+//
+//            }
         }
     }
     

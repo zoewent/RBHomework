@@ -9,12 +9,6 @@
 import UIKit
 
 class GridCollectionViewController: UICollectionViewController {
-    
-    enum ItemCategory {
-        case all
-        case saved
-        case unsaved
-    }
 
     var page: Page?
     var products: [RSProduct]?

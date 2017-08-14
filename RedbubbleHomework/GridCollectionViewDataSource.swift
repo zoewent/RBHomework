@@ -36,8 +36,6 @@ class GridCollectionViewDataSource: NSObject {
             self.artworks = artworks
         }
     }
-    
-    
 }
 
 extension GridCollectionViewDataSource : UICollectionViewDataSource {
