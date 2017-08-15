@@ -11,23 +11,25 @@ import UIKit
 class ProductViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var artworkButton: UIButton!
-    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var artworkImageView: UIImageView!
 
+    @IBOutlet weak var favouriteButton: UIButton!
 
     var product: RSProduct?
     var artwork: RSWork?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.imageView.setImage(fromUrl: product?.imageUrl ?? "")
-        self.artworkButton.imageView?.setImage(fromUrl: artwork?.imageUrl ?? "")
+        imageView.setImage(fromUrl: product?.imageUrl ?? "")
+        artworkImageView.setImage(fromUrl: artwork?.imageUrl ?? "")
         refreshUI(to: product?.isSaved ?? false)
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.artworkPressed(_:)))
+        artworkImageView.addGestureRecognizer(tapGesture)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     private func refreshUI(to favourited: Bool) {
@@ -48,7 +50,9 @@ class ProductViewController: UIViewController {
         refreshUI(to: product?.isSaved ?? false)
     }
     
-    @IBAction func artworkButtonPressed(_ sender: UIButton) {
+    
+    
+    func artworkPressed(_ sender: UIImageView) {
         let artworkVC = UIStoryboard(storyboard: .main).instantiateViewController() as ArtworkViewController
         artworkVC.artwork = artwork
         if let artistName = artwork?.artistName {
@@ -57,5 +61,4 @@ class ProductViewController: UIViewController {
         }
         navigationController?.pushViewController(artworkVC, animated: true)
     }
-
 }
