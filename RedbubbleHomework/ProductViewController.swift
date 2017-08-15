@@ -20,6 +20,9 @@ class ProductViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = product?.productType ?? "Product"
+        
         imageView.setImage(fromUrl: product?.imageUrl ?? "")
         artworkImageView.setImage(fromUrl: artwork?.imageUrl ?? "")
         refreshUI(to: product?.isSaved ?? false)
