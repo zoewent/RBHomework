@@ -27,10 +27,8 @@ class GridCollectionViewDataSource: NSObject {
         case .product:
             self.resuableCellIdentifier = ProductGridCollectionViewCellIdentifier
             self.products = products
-//            self.artworks = 
         case .artwork:
             self.resuableCellIdentifier = ArtworkGridCollectionViewCellIdentifier
-//            self.products = []
             self.artworks = artworks
         }
     }

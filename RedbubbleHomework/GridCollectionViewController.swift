@@ -41,33 +41,40 @@ class GridCollectionViewController: UICollectionViewController {
     }
     
     fileprivate func reset() {
-        
+
+        fetch(with: category)
+
         if pageType == .product {
-            switch category {
-            case .all:
-                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [])
-            case .saved:
-                let savedProducts = products?.filter { $0.isSaved }
-                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: savedProducts ?? [])
-            case .unsaved:
-                let unsavedProducts = products?.filter { !$0.isSaved }
-                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: unsavedProducts ?? [])
-            }
+            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [])
         } else {
-            switch category {
-            case .all:
-                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: artworks ?? [])
-            case .saved:
-                let savedArtwork = artworks?.filter { $0.isSaved }
-                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: savedArtwork ?? [])
-            case .unsaved:
-                let unsavedArtwork = artworks?.filter { !$0.isSaved }
-                collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: unsavedArtwork ?? [])
-            }
+            collectionViewDataSource = GridCollectionViewDataSource(page: pageType, artworks: artworks ?? [])
         }
         
         self.collectionView?.dataSource = collectionViewDataSource
         collectionView?.reloadData()
+    }
+
+    fileprivate func fetch(with category: ItemCategory) {
+        let realm = RealmManager.shared.realm
+        if pageType == .product {
+            switch category {
+            case .all:
+                products = realm?.objects(RSProduct.self).map { $0 as RSProduct }
+            case .saved:
+                products = realm?.objects(RSProduct.self).filter("isSaved == %@", true).map { $0 as RSProduct }
+            case .unsaved:
+                products = realm?.objects(RSProduct.self).filter("isSaved == %@", false).map { $0 as RSProduct }
+            }
+        } else {
+            switch category {
+            case .all:
+                artworks = realm?.objects(RSWork.self).map { $0 as RSWork }
+            case .saved:
+                artworks = realm?.objects(RSWork.self).filter("isSaved == %@", true).map { $0 as RSWork }
+            case .unsaved:
+                artworks = realm?.objects(RSWork.self).filter("isSaved == %@", false).map { $0 as RSWork }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
