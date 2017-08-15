@@ -24,6 +24,7 @@ class ProductViewController: UIViewController {
         artworkImageView.setImage(fromUrl: artwork?.imageUrl ?? "")
         refreshUI(to: product?.isSaved ?? false)
         
+        artworkImageView.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.artworkPressed(_:)))
         artworkImageView.addGestureRecognizer(tapGesture)
     }
@@ -50,9 +51,7 @@ class ProductViewController: UIViewController {
         refreshUI(to: product?.isSaved ?? false)
     }
     
-    
-    
-    func artworkPressed(_ sender: UIImageView) {
+    fileprivate func artworkPressed(_ sender: UIImageView) {
         let artworkVC = UIStoryboard(storyboard: .main).instantiateViewController() as ArtworkViewController
         artworkVC.artwork = artwork
         if let artistName = artwork?.artistName {
