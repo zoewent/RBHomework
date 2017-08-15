@@ -45,22 +45,10 @@ class ImageDownloaderTests: XCTestCase {
     func testInvalidUrl() {
         let imageUrl = "https:"
         
-        var image: UIImage? = nil
         ImageDownloader.shared.getDataFromUrl(url: imageUrl) { (data, _, error) in
             
-            guard error == nil else {
-                fail("Image download error")
-                return
-            }
-            
-            guard let data = data else {
-                fail("Cant load image data")
-                return
-            }
-            
-            image = UIImage(data: data)
+            expect(error).toNot(beNil())
         }
         
-        expect(image).toEventually(beNil())
     }
 }
