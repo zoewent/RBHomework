@@ -11,8 +11,10 @@ import UIKit
 class ProductViewController: UIViewController {
 
     @IBOutlet weak var imageView: UIImageView!
-    
     @IBOutlet weak var artworkButton: UIButton!
+    @IBOutlet weak var favouriteButton: UIButton!
+
+
     var product: RSProduct?
     var artwork: RSWork?
     
@@ -20,11 +22,30 @@ class ProductViewController: UIViewController {
         super.viewDidLoad()
         self.imageView.setImage(fromUrl: product?.imageUrl ?? "")
         self.artworkButton.imageView?.setImage(fromUrl: artwork?.imageUrl ?? "")
+        refreshUI(to: product?.isSaved ?? false)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+
+    private func refreshUI(to favourited: Bool) {
+        DispatchQueue.main.async {
+            self.favouriteButton.imageView?.image = favourited ? Image.filledHeart : Image.heart
+        }
+    }
+
+    @IBAction func favouriteButtonPressed(_ sender: UIButton) {
+
+        guard let p = product else { return }
+
+        let realm = RealmManager.shared.realm
+        try? realm?.write {
+            product?.isSaved = !p.isSaved
+        }
+
+        refreshUI(to: product?.isSaved ?? false)
     }
     
     @IBAction func artworkButtonPressed(_ sender: UIButton) {

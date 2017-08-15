@@ -10,5 +10,7 @@ import Foundation
 import UIKit
 
 struct Image {
-    static let placeholder = UIImage(named: "placeholder")
+    static let placeholder = UIImage(named: "placeholder") ?? UIImage()
+    static let filledHeart = UIImage(named: "icon-heart-filled") ?? UIImage()
+    static let heart = UIImage(named: "icon-heart") ?? UIImage()
 }
