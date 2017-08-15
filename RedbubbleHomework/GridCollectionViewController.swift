@@ -87,17 +87,24 @@ class GridCollectionViewController: UICollectionViewController {
         switch pageType {
         case .product:
             let product = products?[indexPath.row]
+            let productVC = UIStoryboard(storyboard: .main).instantiateViewController() as ProductViewController
+            productVC.product = product
+
             if let workId = product?.workId {
                 let artwork = RealmManager.shared.realm.object(ofType: RSWork.self, forPrimaryKey: workId)
-                print(artwork?.artistName ?? "")
+                productVC.artwork = artwork
             }
-            
+            navigationController?.pushViewController(productVC, animated: true)
+
         case .artwork:
             let artwork = artworks?[indexPath.row]
+            let artworkVC = UIStoryboard(storyboard: .main).instantiateViewController() as ArtworkViewController
+            artworkVC.artwork = artwork
             if let artistName = artwork?.artistName {
                 let artist = RealmManager.shared.realm.object(ofType: RSArtist.self, forPrimaryKey: artistName)
-                print(artist?.avatarImageUrl ?? "")
+                artworkVC.artist = artist
             }
+            navigationController?.pushViewController(artworkVC, animated: true)
         }
     }
 

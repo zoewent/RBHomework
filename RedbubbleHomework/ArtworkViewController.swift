@@ -10,10 +10,24 @@ import UIKit
 
 class ArtworkViewController: UIViewController {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var avatarImage: UIImageView!
+    @IBOutlet weak var artistNameLabel: UILabel!
+
+    var artwork: RSWork?
+    var artist: RSArtist?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.navigationController?.title = "Artwork"
+        imageView.setImage(fromUrl: artwork?.imageUrl ?? "")
+        titleLabel.text = artwork?.title ?? ""
+        avatarImage.stylify(.round)
+        avatarImage.setImage(fromUrl: artist?.avatarImageUrl ?? "")
+        artistNameLabel.text = artwork?.artistName
+        
     }
 
     override func didReceiveMemoryWarning() {

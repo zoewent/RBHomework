@@ -28,7 +28,13 @@ class ProductViewController: UIViewController {
     }
     
     @IBAction func artworkButtonPressed(_ sender: UIButton) {
-        
+        let artworkVC = UIStoryboard(storyboard: .main).instantiateViewController() as ArtworkViewController
+        artworkVC.artwork = artwork
+        if let artistName = artwork?.artistName {
+            let artist = RealmManager.shared.realm.object(ofType: RSArtist.self, forPrimaryKey: artistName)
+            artworkVC.artist = artist
+        }
+        navigationController?.pushViewController(artworkVC, animated: true)
     }
-    
+
 }

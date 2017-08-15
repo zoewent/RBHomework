@@ -11,6 +11,7 @@ import UIKit
 extension UIImageView {
     enum Style {
         case `default`
+        case round
     }
     
     func stylify(_ style: Style) {
@@ -18,6 +19,11 @@ extension UIImageView {
         case .default:
             contentMode = .scaleAspectFill
             clipsToBounds = true
+        case .round:
+            contentMode = .scaleAspectFill
+            clipsToBounds = true
+            let radius = frame.size.height > frame.size.width ? frame.size.width/2 : frame.size.height/2
+            layer.cornerRadius = radius
         }
     }
 }
