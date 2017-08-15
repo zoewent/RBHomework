@@ -51,7 +51,7 @@ class ProductViewController: UIViewController {
         refreshUI(to: product?.isSaved ?? false)
     }
     
-    fileprivate func artworkPressed(_ sender: UIImageView) {
+    func artworkPressed(_ sender: UIImageView) {
         let artworkVC = UIStoryboard(storyboard: .main).instantiateViewController() as ArtworkViewController
         artworkVC.artwork = artwork
         if let artistName = artwork?.artistName {
