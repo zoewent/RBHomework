@@ -165,6 +165,8 @@
 		5D75E4441F3EC62B00843CB7 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */,
+				5D75E4791F40676400843CB7 /* UINibExtension.swift */,
 				5D75E4451F3EC63C00843CB7 /* UIColorPalette.swift */,
 				5D75E4581F3EFF4E00843CB7 /* UIImageStatic.swift */,
 			);
@@ -174,8 +176,6 @@
 		5D75E44F1F3ECFA700843CB7 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				5D75E44D1F3ECF9C00843CB7 /* UIStoryboardExtension.swift */,
-				5D75E4791F40676400843CB7 /* UINibExtension.swift */,
 				5D75E4521F3EEC2F00843CB7 /* UIImageView+Networking.swift */,
 				5D75E4651F3F4B9A00843CB7 /* UIImageView+Style.swift */,
 			);
