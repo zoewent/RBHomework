@@ -173,28 +173,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thm-X8-lFi">
-                                <rect key="frame" x="150" y="538" width="80" height="80"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="00p-Ud-LsL"/>
-                                    <constraint firstAttribute="width" constant="80" id="8VD-ru-MHU"/>
-                                    <constraint firstAttribute="height" constant="80" id="o67-l6-T4a"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="wtv-7o-ZAZ"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nF-qu-cQA">
-                                <rect key="frame" x="238" y="538" width="80" height="80"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="HxN-ZB-bdp"/>
-                                    <constraint firstAttribute="height" constant="80" id="PyK-KS-RKi"/>
-                                    <constraint firstAttribute="width" constant="80" id="hNY-wA-2qv"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="ikB-pr-HmN"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Related Artwork:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nYP-nj-cNk">
                                 <rect key="frame" x="16" y="501" width="94.5" height="21"/>
                                 <constraints>
@@ -214,21 +192,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Thm-X8-lFi" firstAttribute="leading" secondItem="8En-GW-GIQ" secondAttribute="leading" id="1kF-TW-dvw"/>
-                            <constraint firstItem="5nF-qu-cQA" firstAttribute="leading" secondItem="Thm-X8-lFi" secondAttribute="trailing" constant="8" id="24x-3n-OcO"/>
                             <constraint firstItem="8En-GW-GIQ" firstAttribute="leading" secondItem="nYP-nj-cNk" secondAttribute="trailing" constant="40" id="5U0-lX-VoP"/>
                             <constraint firstItem="nYP-nj-cNk" firstAttribute="leading" secondItem="1Mj-op-aMZ" secondAttribute="leading" constant="16" id="5x8-wZ-lCj"/>
                             <constraint firstItem="A23-sa-Tfe" firstAttribute="leading" secondItem="1Mj-op-aMZ" secondAttribute="leading" id="IYV-Ej-qGt"/>
                             <constraint firstItem="9bK-Nx-53a" firstAttribute="leading" secondItem="1Mj-op-aMZ" secondAttribute="leading" constant="16" id="J2p-we-vn4"/>
                             <constraint firstItem="8En-GW-GIQ" firstAttribute="top" secondItem="nYP-nj-cNk" secondAttribute="top" id="J9d-mI-3oe"/>
                             <constraint firstItem="RrM-d2-Bmc" firstAttribute="top" secondItem="A23-sa-Tfe" secondAttribute="bottom" constant="16" id="JBC-R1-uhF"/>
-                            <constraint firstItem="Thm-X8-lFi" firstAttribute="top" secondItem="8En-GW-GIQ" secondAttribute="bottom" constant="16" id="PFu-ox-xn7"/>
                             <constraint firstAttribute="trailing" secondItem="A23-sa-Tfe" secondAttribute="trailing" id="XEw-ub-cuB"/>
                             <constraint firstItem="9bK-Nx-53a" firstAttribute="top" secondItem="nYP-nj-cNk" secondAttribute="bottom" constant="16" id="YQh-mc-Rrd"/>
                             <constraint firstItem="nYP-nj-cNk" firstAttribute="top" secondItem="RrM-d2-Bmc" secondAttribute="bottom" constant="16" id="eha-B2-pdN"/>
                             <constraint firstItem="A23-sa-Tfe" firstAttribute="top" secondItem="ub8-Jp-vG2" secondAttribute="bottom" id="sJu-lh-93k"/>
                             <constraint firstItem="RrM-d2-Bmc" firstAttribute="centerX" secondItem="1Mj-op-aMZ" secondAttribute="centerX" id="x9F-tJ-VQG"/>
-                            <constraint firstItem="5nF-qu-cQA" firstAttribute="top" secondItem="8En-GW-GIQ" secondAttribute="bottom" constant="16" id="yf4-iq-hzD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Product" id="fKk-oX-XJ6"/>
