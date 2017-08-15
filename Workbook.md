@@ -1,10 +1,12 @@
 ### Assumptions
 1. Entity relationship: 
-    Artist to Artwork: One to many
-    Artwork to Product: One to many
-2. Assume products and artworks should be displayed seperately
-3. Assume data model can be modified
-    Property "isSaved" is added to all models in order to save favourites into realm.
+    `RSArtist` to `RSWork`: one to many. `RSWork` to `RSProduct`: one to many
+
+2. Assume products and artworks can be displayed seperately
+
+3. Assume data model can be modified. 
+
+Property "isSaved" is added to all models in order to save favourites into realm.
 
 ### Extra 3rd Party Library
 Nimble is a library help to do unit testing in an efficient and readable way. It allows to express expectations using a natural, easily understood language. As how to use XCTest is not a key point of this test, I decided to use nimble for unit test to save development time.
@@ -12,9 +14,6 @@ Nimble is a library help to do unit testing in an efficient and readable way. It
 ### Features
 1. Products and artworks are displayed in two seperated collection views, based on the consider of user experience. Mix products and artworks may cause confusion since products are generated with an artwork based on some templetes, such as a poster templete, or a mug (my understanding), 
 
-
-
-This is not a fo
 
 
 ### Thoughts about architecture
