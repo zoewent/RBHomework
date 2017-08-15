@@ -43,9 +43,7 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
             print("\(itemCategory)")
         }
     }
-    
-//    var products: [RSProduct]?
-//    var artworks:[RSWork]?
+
     fileprivate var gridViewControllers = [GridCollectionViewController]()
     
     var parentVC: HomeViewController?
@@ -56,8 +54,6 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
         delegate = self
         dataSource = self
         parentVC?.delegate = self
-        
-//        fetch()
         instantiatePages()
         
         setViewControllers(
@@ -77,19 +73,12 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
         let productGrid = UIStoryboard(storyboard: .main).instantiateViewController() as GridCollectionViewController
         let artworkGrid = UIStoryboard(storyboard: .main).instantiateViewController() as GridCollectionViewController
         productGrid.page = .product
-//        productGrid.products = products ?? []
         artworkGrid.page = .artwork
-//        artworkGrid.artworks = artworks ?? []
 
         gridViewControllers.append(productGrid)
         gridViewControllers.append(artworkGrid)
 
     }
-    
-//    fileprivate func fetch() {
-//        products = RealmManager.shared.realm.objects(RSProduct.self).map { $0 as RSProduct }
-//        artworks = RealmManager.shared.realm.objects(RSWork.self).map { $0 as RSWork }
-//    }
 
     // MARK: HomeViewControllerSegmentable
     
