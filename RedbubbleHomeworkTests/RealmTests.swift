@@ -21,14 +21,7 @@ class RealmTests: XCTestCase {
     }
     
     func testGetArtist() {
-        
-//        var artists: [RSArtist] = []
-//        
-//        _ = RSArtist.items(with: "") { results in
-//            
-//            artists = results.map { $0 as RSArtist }
-//        }
-//        
-//        expect(artists).toEventuallyNot(beNil())
+        let artists = RealmManager.shared.realm.objects(RSArtist.self)
+        expect(artists.count).to(equal(14))
     }
 }

@@ -21,6 +21,10 @@ enum ItemCategory {
     case unsaved
 }
 
+protocol PageViewControllerSegmentable: class {
+    func resetSegment(with category: ItemCategory)
+}
+
 class GridPageViewController: UIPageViewController, HomeViewControllerSegmentable {
     
     var currentPage: Page = Page.initialPage {
@@ -63,12 +67,6 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
                 animated: false,
                 completion: nil)
         }
-//        setViewControllers(
-////            [gridViewControllers[currentPage.rawValue]],
-//            [gridViewControllers.first!],
-//            direction: .forward,
-//            animated: false,
-//            completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -87,7 +85,7 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
         gridViewControllers.append(artworkGrid)
 
     }
-
+    
     // MARK: HomeViewControllerSegmentable
     
     func resetDataSource(with category: ItemCategory) {
@@ -95,7 +93,9 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
         if currentPage == .artwork {
             let gridVC = gridViewControllers.last
             gridVC?.category = category
-        } else {
+        }
+            
+        if currentPage == .product {
             let gridVC = gridViewControllers.first
             gridVC?.category = category
         }
@@ -106,6 +106,7 @@ extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewContr
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
 
+        /*
         guard let viewControllerIndex = gridViewControllers.index(of: viewController as! GridCollectionViewController) else {
             return nil
         }
@@ -120,10 +121,10 @@ extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewContr
             return nil
         }
 
-        currentPage = .product
+//        currentPage = .product
 
         return gridViewControllers[previousIndex]
-
+        */
 
 //        let vc = viewController as! GridCollectionViewController
 //
@@ -137,21 +138,22 @@ extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewContr
 //        }
 
 
-//        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
-//            if index == 0 {
-//                //check
-//                return nil
-//            } else {
+        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
+            if index == 0 {
+                //check
+                return nil
+            } else {
 //                currentPage = .product
-//                return gridViewControllers.first
-//            }
-//            
-//        }
-//
-//        return nil
+                return gridViewControllers.first
+            }
+            
+        }
+
+        return nil
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
 
+        /*
         guard let viewControllerIndex = gridViewControllers.index(of: viewController as! GridCollectionViewController) else {
             return nil
         }
@@ -168,20 +170,38 @@ extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewContr
             return nil
         }
 
-        currentPage = .artwork
+//        currentPage = .artwork
 
         return gridViewControllers[nextIndex]
+        */
 
-//        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
-//            
-//            if index == 0 {
-//                currentPage = .artwork
-//                return gridViewControllers.last
-//            } else {
-//                return nil
-//            }
-//        }
-//        
-//        return nil
+        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
+            
+            if index == 0 {
+                currentPage = .artwork
+                return gridViewControllers.last
+            } else {
+                return nil
+            }
+        }
+        
+        return nil
+    }
+    
+    public func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard previousViewControllers.count == 1 else { return }
+        
+        let viewController = previousViewControllers.first as! GridCollectionViewController
+        
+        if viewController.page == .product {
+            currentPage = .artwork
+            viewController.category = itemCategory
+        }
+        
+        if viewController.page == .artwork {
+            currentPage = .product
+            viewController.category = itemCategory
+        }
+        
     }
 }

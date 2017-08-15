@@ -17,7 +17,9 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
-    var itemCategory: ItemCategory = .all
+    var productCategory: ItemCategory = .all
+    var artworkCategory: ItemCategory = .all
+    
     weak var delegate: HomeViewControllerSegmentable?
     
     override func viewDidLoad() {

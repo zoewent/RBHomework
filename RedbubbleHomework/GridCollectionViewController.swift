@@ -29,6 +29,7 @@ class GridCollectionViewController: UICollectionViewController {
         }
         
         pageType = page!
+        
         reset()
         
         guard let collectionViewDataSource = collectionViewDataSource else { return }
@@ -48,7 +49,7 @@ class GridCollectionViewController: UICollectionViewController {
     
     fileprivate func reset() {
 
-        fetch(with: category)
+        fetch(with: category, page: pageType)
 
         if pageType == .product {
             collectionViewDataSource = GridCollectionViewDataSource(page: pageType, products: products ?? [])
@@ -60,9 +61,9 @@ class GridCollectionViewController: UICollectionViewController {
         collectionView?.reloadData()
     }
 
-    fileprivate func fetch(with category: ItemCategory) {
+    fileprivate func fetch(with category: ItemCategory, page: Page) {
         let realm = RealmManager.shared.realm
-        if pageType == .product {
+        if page == .product {
             switch category {
             case .all:
                 products = realm?.objects(RSProduct.self).map { $0 as RSProduct }
