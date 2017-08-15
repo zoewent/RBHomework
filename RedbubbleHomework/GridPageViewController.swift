@@ -55,12 +55,20 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
         dataSource = self
         parentVC?.delegate = self
         instantiatePages()
-        
-        setViewControllers(
-            [gridViewControllers[currentPage.rawValue]],
-            direction: .forward,
-            animated: false,
-            completion: nil)
+
+        if let firstVC = gridViewControllers.first {
+            setViewControllers(
+                [firstVC],
+                direction: .forward,
+                animated: false,
+                completion: nil)
+        }
+//        setViewControllers(
+////            [gridViewControllers[currentPage.rawValue]],
+//            [gridViewControllers.first!],
+//            direction: .forward,
+//            animated: false,
+//            completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,29 +105,83 @@ class GridPageViewController: UIPageViewController, HomeViewControllerSegmentabl
 extension GridPageViewController : UIPageViewControllerDelegate, UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
-            if index == 0 {
-                return nil
-            } else {
-                currentPage = .product
-                return gridViewControllers.first
-            }
-            
+
+        guard let viewControllerIndex = gridViewControllers.index(of: viewController as! GridCollectionViewController) else {
+            return nil
         }
-        
-        return nil
+
+        let previousIndex = viewControllerIndex - 1
+
+        guard previousIndex >= 0 else {
+            return nil
+        }
+
+        guard gridViewControllers.count > previousIndex else {
+            return nil
+        }
+
+        currentPage = .product
+
+        return gridViewControllers[previousIndex]
+
+
+//        let vc = viewController as! GridCollectionViewController
+//
+//        if vc.page == .product {
+//            currentPage = .product
+//            return gridViewControllers.first
+////            return nil
+//        } else {
+//            currentPage = .product
+//            return gridViewControllers.first
+//        }
+
+
+//        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
+//            if index == 0 {
+//                //check
+//                return nil
+//            } else {
+//                currentPage = .product
+//                return gridViewControllers.first
+//            }
+//            
+//        }
+//
+//        return nil
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
-            
-            if index == 0 {
-                currentPage = .artwork
-                return gridViewControllers.last
-            } else {
-                return nil
-            }
+
+        guard let viewControllerIndex = gridViewControllers.index(of: viewController as! GridCollectionViewController) else {
+            return nil
         }
-        
-        return nil
+
+        let nextIndex = viewControllerIndex + 1
+
+        let orderedViewControllersCount = gridViewControllers.count
+
+        guard orderedViewControllersCount != nextIndex else {
+            return nil
+        }
+
+        guard orderedViewControllersCount > nextIndex else {
+            return nil
+        }
+
+        currentPage = .artwork
+
+        return gridViewControllers[nextIndex]
+
+//        if let index = gridViewControllers.index(of: viewController as! GridCollectionViewController) {
+//            
+//            if index == 0 {
+//                currentPage = .artwork
+//                return gridViewControllers.last
+//            } else {
+//                return nil
+//            }
+//        }
+//        
+//        return nil
     }
 }
