@@ -2,7 +2,7 @@
 //  RSProduct+Realm.swift
 //  RedbubbleHomework
 //
-//  Created by Tingting Wen on 11/8/17.
+//  Created by Zoe on 11/8/17.
 //  Copyright © 2017 Redbubble. All rights reserved.
 //
 
