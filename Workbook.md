@@ -12,12 +12,12 @@
     Property "isSaved" is added to all models in order to save favourites into realm.
 
 ### Extra 3rd Party Library
-Nimble is a library help to do unit testing in an efficient and readable way. It allows to express expectations using a natural, easily understood language. As how to use XCTest is not a key point of this test, I decided to use nimble for unit test to save development time.
+Nimble is a library help with efficient and readable unit testing. It allows to express expectations using a natural, easily understood language. As how to use XCTest is not a key point of this test, I decided to use nimble for unit test to save development time.
 
 ### Features
-1. Products and artworks are displayed in two seperated collection views for consideration of user experience. Mix products and artworks may cause confusion since products are generated with an artwork based on some templetes, such as a poster templete, or a mug (my understanding). 
+1. Products and artworks are displayed in two seperated collection views for the consideration of user experience. Mix products and artworks may cause confusion since products are generated with an artwork based on some templetes, such as a poster templete, or a mug (my understanding). 
 
-    Product and artwork collections can be switch by swiping left or right, also can scroll up and down to see all items.
+    Product and artwork collections can be switched by swiping left or right, also can scroll up and down to check all items.
 
 2. Segmented control can filter products and artworks as All, favourited and not favourited.
 
